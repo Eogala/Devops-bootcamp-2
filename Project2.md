@@ -5,11 +5,11 @@ In this project, you will learn the concept of subdomains and hosting multiple w
 * Create two website directories with two different website templates.
 * Create two subdomains
 * Add the IP of the server as A record to the two subdomains.
-* 5	Configure the Virtual host to point two subdomains to two different website directories.
-* 6	Validate the setup by accessing the subdomains.
-* 7	Create a certbot SSL certificate for the root Domain.
-* 8	Configure certbot on Nginx for two websites.
-* 9	Validate the subdomain websites’ SSL using OpenSSL utility.
+* Configure the Virtual host to point two subdomains to two different website directories.
+* Validate the setup by accessing the subdomains.
+* Create a certbot SSL certificate for the root Domain.
+* Configure certbot on Nginx for two websites.
+* Validate the subdomain websites’ SSL using OpenSSL utility.
 
 # Documentation
 Ubuntu server was spinned up, elastic IP is been associate to my instance.   Note: taking refrence from Project1
@@ -79,32 +79,6 @@ Open your terminal and run sudo nano /etc/nginx/sites-available/kitchen and gyms
 
 ![pic](img/img9a.png)
 
-Copy and paste the following code into the open text editor
-
-server {
-    listen 80;
-    server_name placeholder.com www.placeholder.com;
-
-    root /var/www/html/2119_gymso_fitness;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-
-
-server {
-    listen 80;
-    server_name example.com www.example.com;
-
-    root /var/www/html/2129_crispy_kitchen;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
 
 * Restart your nginx server by running the sudo systemctl restart nginx command.
 ## Go to your domain name in a web browser to verify that your website is accesssible
