@@ -59,20 +59,33 @@ sudo rm /etc/nginx/sites-enabled/default
 
 *In route 53, select the domain name and click on Create record.
 
+![pic](img/img7.png)
 
 
 Restart your nginx server by running the sudo systemctl restart nginx command.
 
-Go to your domain name in a web browser to verify that your website is accesssible
+Paste your IP address in value info and then click on Create records
+Click on Create record again, to create the record for your sub domain
 
-![pic](img/img10.png
+Open your terminal and run sudo nano /etc/nginx/sites-available/kitchen
+
+![pic](img/img8.png)
+
+Repeat the same process while creating your second subdomain record, and confirm that they both exist in the records list.
+
+![pic](img/img9.png)
+
+#Go to your domain name in a web browser to verify that your website is accesssible
+
+![pic](img/img10.png)
+
 
 ![pic](img/(img11).png)
 
 ##Install certbot and Request For an SSL/TLS Certificate
+
 *Install certbot by executing the following commands: sudo apt update sudo apt install python3-certbot-nginx sudo certbot --nginx
 
-![pic](img)
 
 Executed the sudo certbot --nginx command to request your certificate. Follow the instructions provided by certbot and select the domain name for which i would like to activate HTTPS.
 
@@ -80,16 +93,16 @@ Executed the sudo certbot --nginx command to request your certificate. Follow th
 
 Verify the website's SSL using the OpenSSL utility with the command: openssl s_client -connect cleaning.cloudghoul.online:443
 
-![pic](img)
+![pic](img/12b.png)
 
 #Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
-![pic](img/img12.png)
 
 
 ![pic](img/img12.png)
 
 ![pic](img/img13.png)
 
+The end!
 
 
 
