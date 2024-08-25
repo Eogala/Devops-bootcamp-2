@@ -65,6 +65,32 @@ Restart your nginx server by running the sudo systemctl restart nginx command.
 
 Go to your domain name in a web browser to verify that your website is accesssible
 
+![pic](img/img10.png
+
+![pic](img/(img11).png)
+
+##Install certbot and Request For an SSL/TLS Certificate
+*Install certbot by executing the following commands: sudo apt update sudo apt install python3-certbot-nginx sudo certbot --nginx
+
+![pic](img)
+
+Executed the sudo certbot --nginx command to request your certificate. Follow the instructions provided by certbot and select the domain name for which i would like to activate HTTPS.
+
+![pic](img/img12a.png)
+
+Verify the website's SSL using the OpenSSL utility with the command: openssl s_client -connect cleaning.cloudghoul.online:443
+
+![pic](img)
+
+#Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
+![pic](img/img12.png)
+
+
+![pic](img/img12.png)
+
+![pic](img/img13.png)
+
+
 
 
 
