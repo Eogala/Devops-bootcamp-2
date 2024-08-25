@@ -1,5 +1,5 @@
 # Setting up Multiple Static Websites on a Single Server Using Nginx Virtual Hosts
-In this project, you will learn the concept of subdomains and hosting multiple websites on a single server using Nginx Virtual Host configuration.
+ This project involves subdomains and hosting multiple websites on a single server using Nginx Virtual Host configuration.
 ## S/N	Project Tasks
 * Install and configure Nignx on a server
 * Create two website directories with two different website templates.
