@@ -1,15 +1,15 @@
 # Setting up Multiple Static Websites on a Single Server Using Nginx Virtual Hosts
 In this project, you will learn the concept of subdomains and hosting multiple websites on a single server using Nginx Virtual Host configuration.
 ## S/N	Project Tasks
-- 1	Install and configure Nignx on a server
-- 2	Create two website directories with two different website templates.
-- 3	Create two subdomains
-- 4	Add the IP of the server as A record to the two subdomains.
-- 5	Configure the Virtual host to point two subdomains to two different website directories.
-- 6	Validate the setup by accessing the subdomains.
-- 7	Create a certbot SSL certificate for the root Domain.
-- 8	Configure certbot on Nginx for two websites.
-- 9	Validate the subdomain websites’ SSL using OpenSSL utility.
+* Install and configure Nignx on a server
+* Create two website directories with two different website templates.
+* Create two subdomains
+* Add the IP of the server as A record to the two subdomains.
+* 5	Configure the Virtual host to point two subdomains to two different website directories.
+* 6	Validate the setup by accessing the subdomains.
+* 7	Create a certbot SSL certificate for the root Domain.
+* 8	Configure certbot on Nginx for two websites.
+* 9	Validate the subdomain websites’ SSL using OpenSSL utility.
 
 # Documentation
 Ubuntu server was spinned up, elastic IP is been associate to my instance.   Note: taking refrence from Project1
@@ -44,7 +44,7 @@ Copy and paste the following code into the open text editor for websit 1 & 2
 
 ![pic](img/(img5).png)
 
-Symbolic link  created for both websites by running the following command. sudo ln -s /etc/nginx/sites-available/kitchen /etc/nginx/sites-enabled/ sudo ln -s /etc/nginx/sites-available/gymso /etc/nginx/sites-enabled/
+Symbolic link  was created for both websites by running the following command. sudo ln -s /etc/nginx/sites-available/kitchen /etc/nginx/sites-enabled/ sudo ln -s /etc/nginx/sites-available/gymso /etc/nginx/sites-enabled/
 
 ![pic](img/(img6).png)
 
@@ -55,7 +55,7 @@ sudo rm /etc/nginx/sites-available/default
 sudo rm /etc/nginx/sites-enabled/default
 * Restart the Nginx server by executing the following command: sudo systemctl restart nginx
 
-## Create A Record
+# Create A Record
 * create a hosted zone
 
 * In route 53, select the domain name and click on Create record.
@@ -79,8 +79,35 @@ Open your terminal and run sudo nano /etc/nginx/sites-available/kitchen and gyms
 
 ![pic](img/img9a.png)
 
+Copy and paste the following code into the open text editor
+
+server {
+    listen 80;
+    server_name placeholder.com www.placeholder.com;
+
+    root /var/www/html/2119_gymso_fitness;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
+
+server {
+    listen 80;
+    server_name example.com www.example.com;
+
+    root /var/www/html/2129_crispy_kitchen;
+    index index.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}
+
 * Restart your nginx server by running the sudo systemctl restart nginx command.
-# Go to your domain name in a web browser to verify that your website is accesssible
+## Go to your domain name in a web browser to verify that your website is accesssible
 
 
 ![pic](img/img10.png)
@@ -102,7 +129,7 @@ Verify the website's SSL using the OpenSSL utility with the command: openssl s_c
 
 ![pic](img/12b.png)
 
-# Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
+## Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
 
 
 ![pic](img/img12.png)
