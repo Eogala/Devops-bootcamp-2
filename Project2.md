@@ -12,3 +12,15 @@ In this project, you will learn the concept of subdomains and hosting multiple w
 9	Validate the subdomain websites’ SSL using OpenSSL utility.
 # Documentation
 Ubuntu server was spinned up, elastic IP is been associate to my instance.   Note: taking refrence from Project1
+## Install Nginx and Setup Website
+**Execute the following commands.
+sudo apt update
+sudo apt upgrade
+sudo apt install nginx
+*Start your Nginx server by running the sudo systemctl start nginx command, enable it to start on boot by executing sudo systemctl enable nginx, and then confirm if it's running with the sudo systemctl status nginx command.
+*Visit your instances IP address in a web browser to view the default Nginx startup page.
+![pic](img/(img1).png)
+* Template Downloaded from https://www.tooplate.com
+* Right clicked and selected Inspect from the drop down menu
+* Right clicked on the website name, select Copy and click on Copy link address.
+![pic](img/(img2).png)
