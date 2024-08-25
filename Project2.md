@@ -15,9 +15,9 @@ In this project, you will learn the concept of subdomains and hosting multiple w
 Ubuntu server was spinned up, elastic IP is been associate to my instance.   Note: taking refrence from Project1
 ## Install Nginx and Setup Website
 *Execute the following commands.
-sudo apt update
-sudo apt upgrade
-sudo apt install nginx
+- sudo apt update
+- sudo apt upgrade
+- sudo apt install nginx
 *Start your Nginx server by running the sudo systemctl start nginx command, enable it to start on boot by executing sudo systemctl enable nginx, and then confirm if it's running with the sudo systemctl status nginx command.
 *Visit your instances IP address in a web browser to view the default Nginx startup page.
 
@@ -65,10 +65,9 @@ sudo rm /etc/nginx/sites-enabled/default
 
 Restart your nginx server by running the sudo systemctl restart nginx command.
 
-Paste your IP address in value info and then click on Create records
-Click on Create record again, to create the record for your sub domain
+* Paste your IP address in value info and then click on Create records
+* Click on Create record again, to create the record for your sub domain
 
-Open your terminal and run sudo nano /etc/nginx/sites-available/kitchen
 
 ![pic](img/img8.png)
 
@@ -76,17 +75,24 @@ Repeat the same process while creating your second subdomain record, and confirm
 
 ![pic](img/img9.png)
 
+Open your terminal and run sudo nano /etc/nginx/sites-available/kitchen and gymso
+
+![pic](img/img9a.png)
+
+* Restart your nginx server by running the sudo systemctl restart nginx command.
 # Go to your domain name in a web browser to verify that your website is accesssible
+
 
 ![pic](img/img10.png)
 
 
+
 ![pic](img/(img11).png)
+
 
 ## Install certbot and Request For an SSL/TLS Certificate
 
 * Install certbot by executing the following commands: sudo apt update sudo apt install python3-certbot-nginx sudo certbot --nginx
-
 
 Executed the sudo certbot --nginx command to request your certificate. Follow the instructions provided by certbot and select the domain name for which i would like to activate HTTPS.
 
@@ -101,7 +107,11 @@ Verify the website's SSL using the OpenSSL utility with the command: openssl s_c
 
 ![pic](img/img12.png)
 
+
+
 ![pic](img/img13.png)
+
+
 
 The end!
 
