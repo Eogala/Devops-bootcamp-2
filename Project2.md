@@ -1,15 +1,16 @@
 # Setting up Multiple Static Websites on a Single Server Using Nginx Virtual Hosts
 In this project, you will learn the concept of subdomains and hosting multiple websites on a single server using Nginx Virtual Host configuration.
 ## S/N	Project Tasks
-1	Install and configure Nignx on a server
-2	Create two website directories with two different website templates.
-3	Create two subdomains
-4	Add the IP of the server as A record to the two subdomains.
-5	Configure the Virtual host to point two subdomains to two different website directories.
-6	Validate the setup by accessing the subdomains.
-7	Create a certbot SSL certificate for the root Domain.
-8	Configure certbot on Nginx for two websites.
-9	Validate the subdomain websites’ SSL using OpenSSL utility.
+- 1	Install and configure Nignx on a server
+- 2	Create two website directories with two different website templates.
+- 3	Create two subdomains
+- 4	Add the IP of the server as A record to the two subdomains.
+- 5	Configure the Virtual host to point two subdomains to two different website directories.
+- 6	Validate the setup by accessing the subdomains.
+- 7	Create a certbot SSL certificate for the root Domain.
+- 8	Configure certbot on Nginx for two websites.
+- 9	Validate the subdomain websites’ SSL using OpenSSL utility.
+
 # Documentation
 Ubuntu server was spinned up, elastic IP is been associate to my instance.   Note: taking refrence from Project1
 ## Install Nginx and Setup Website
@@ -47,17 +48,17 @@ Symbolic link  created for both websites by running the following command. sudo 
 
 ![pic](img/(img6).png)
 
-*Run the sudo nginx -t command to check the syntax of the Nginx configuration file.
+* Run the sudo nginx -t command to check the syntax of the Nginx configuration file.
 
-*Delete the default files in the sites-available and sites-enabled directories by executing the following commands:
+* Delete the default files in the sites-available and sites-enabled directories by executing the following commands:
 sudo rm /etc/nginx/sites-available/default
 sudo rm /etc/nginx/sites-enabled/default
-*Restart the Nginx server by executing the following command: sudo systemctl restart nginx
+* Restart the Nginx server by executing the following command: sudo systemctl restart nginx
 
 ## Create A Record
-*create a hosted zone
+* create a hosted zone
 
-*In route 53, select the domain name and click on Create record.
+* In route 53, select the domain name and click on Create record.
 
 ![pic](img/img7.png)
 
@@ -75,16 +76,16 @@ Repeat the same process while creating your second subdomain record, and confirm
 
 ![pic](img/img9.png)
 
-#Go to your domain name in a web browser to verify that your website is accesssible
+# Go to your domain name in a web browser to verify that your website is accesssible
 
 ![pic](img/img10.png)
 
 
 ![pic](img/(img11).png)
 
-##Install certbot and Request For an SSL/TLS Certificate
+## Install certbot and Request For an SSL/TLS Certificate
 
-*Install certbot by executing the following commands: sudo apt update sudo apt install python3-certbot-nginx sudo certbot --nginx
+* Install certbot by executing the following commands: sudo apt update sudo apt install python3-certbot-nginx sudo certbot --nginx
 
 
 Executed the sudo certbot --nginx command to request your certificate. Follow the instructions provided by certbot and select the domain name for which i would like to activate HTTPS.
@@ -95,7 +96,7 @@ Verify the website's SSL using the OpenSSL utility with the command: openssl s_c
 
 ![pic](img/12b.png)
 
-#Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
+# Visit https://<domain name> to view your websites. gymso.eogala1818.xyz, kitchen.eogala.1818.xyz
 
 
 ![pic](img/img12.png)
